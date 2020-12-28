@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bunch Bag</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="game">
+      <div class="container">
+        <!-- bag image -->
+
+        <img src="img/bag.png" alt="bag" id="bag" v-show="health !== 0"/>
+
+        <!-- bosted bag -->
+        <img
+          src="img/bag-burst.png"
+          alt="bursted bag"
+          id="bag-busted"
+          v-show="health === 0"
+        />
+
+        <!-- bag health bar -->
+        <div id="bag-health">
+          <div id="life-bar" :style="{width:health + '%'}"></div>
+        </div>
+        <!-- game controls -->
+        <div class="controls">
+          <button class="btn" id="" @click.prevent="punch" v-show="ended === false">Punch</button>
+          <button class="btn" id="" @click.prevent="restart">Restart</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
